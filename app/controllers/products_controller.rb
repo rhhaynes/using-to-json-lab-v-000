@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     respond_to do |format|
       format.html
-      format.json { render :json => @product.to_json }
+      format.json { render :json => @product.to_json(:except => [:created_at]) }
     end
   end
 
